@@ -10,4 +10,8 @@ class Api::V1::ItinerariesController < ApplicationController
         @itinerary = itinerary.find(params[:id])
         render json: @itinerary, status: :ok
     end
+
+    def create
+
+    end
 end

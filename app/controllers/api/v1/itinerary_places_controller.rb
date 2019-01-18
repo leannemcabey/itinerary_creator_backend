@@ -10,4 +10,8 @@ class Api::V1::ItineraryPlacesController < ApplicationController
         @itinerary_place = ItineraryPlace.find(params[:id])
         render json: @itinerary_place, status: :ok
     end
+
+    def create
+
+    end
 end

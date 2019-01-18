@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_17_191157) do
+ActiveRecord::Schema.define(version: 2019_01_18_190122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,14 @@ ActiveRecord::Schema.define(version: 2019_01_17_191157) do
     t.index ["user_id"], name: "index_itineraries_on_user_id"
   end
 
-  create_table "places", force: :cascade do |t|
+  create_table "itinerary_places", force: :cascade do |t|
     t.bigint "itinerary_id"
+    t.bigint "place_id"
+    t.index ["itinerary_id"], name: "index_itinerary_places_on_itinerary_id"
+    t.index ["place_id"], name: "index_itinerary_places_on_place_id"
+  end
+
+  create_table "places", force: :cascade do |t|
     t.string "city"
     t.string "state"
     t.string "address"
@@ -47,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_191157) do
     t.integer "price_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["itinerary_id"], name: "index_places_on_itinerary_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,5 +62,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_191157) do
   end
 
   add_foreign_key "itineraries", "users"
-  add_foreign_key "places", "itineraries"
+  add_foreign_key "itinerary_places", "itineraries"
+  add_foreign_key "itinerary_places", "places"
 end

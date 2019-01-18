@@ -1,3 +1,3 @@
 class Place < ApplicationRecord
-  belongs_to :itinerary
+  has_many :itinerary_places
 end

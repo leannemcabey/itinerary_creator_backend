@@ -1,7 +1,7 @@
 # u1 = User.create(name:'Ruth')
 # u2 = User.create(name: 'Leanne')
 
-@client = GooglePlaces::Client.new('AIzaSyCn9eBALlUlvKWxWMqGpw8JdKF_yf0-1Zo')
+@client = GooglePlaces::Client.new('')
 
 nyc_places_12 = @client.spots(40.7128, -74.0060, options = {:rankby => 'prominence', :types => 'restaurant', :detail => true})
 # nyc_places_12 = @client.spots(40.7128, -74.0060, options = {:rankby => 'prominence', :types => 'art_gallery', :detail => true})

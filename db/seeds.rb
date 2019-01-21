@@ -1,20 +1,7 @@
-<<<<<<< HEAD
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
-u1 = User.create(name:'Ruth')
-u2 = User.create(name: 'Leanne')
-=======
 # u1 = User.create(name:'Ruth')
 # u2 = User.create(name: 'Leanne')
 
-@client = GooglePlaces::Client.new('')
+@client = GooglePlaces::Client.new(Rails.application.credentials.google[:place_api_key])
 
 nyc_places_1 = @client.spots(40.7128, -74.0060, options = {:rankby => 'prominence', :types => 'restaurant', :detail => true})
 
@@ -51,4 +38,3 @@ place_groups.each do |place_group|
     Place.create(city: place.city, state: place.region, address: place.formatted_address, latitude: place.lat, longitude: place.lng, name: place.name, rating: place.rating, description: place.types.join(", "), phone_number: place.formatted_phone_number, website: place.website, price_level: place.price_level)
   end
 end
->>>>>>> e28ecf14b9704c1a5374d5f534fe10ee593019e8

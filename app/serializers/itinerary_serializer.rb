@@ -1,4 +1,4 @@
 class ItinerarySerializer < ActiveModel::Serializer
-  attributes :id, :places
+  attributes :id, :budget, :title, :start, :end, :city, :state
   belongs_to :user
 end

@@ -1,3 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :itineraries
+  attributes :id, :name
+  has_many :itineraries
 end

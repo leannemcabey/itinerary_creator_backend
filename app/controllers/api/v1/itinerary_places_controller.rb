@@ -11,8 +11,13 @@ class Api::V1::ItineraryPlacesController < ApplicationController
     end
 
     def create
-      @new_itinerary_place = ItineraryPlace.create(itinerary_place_params)
+      @new_itinerary_place = ItineraryPlace.create(itinerary_places_params)
       render json: @new_itinerary_place, status: :accepted
+    end
+
+    def update
+      @update_itinerary_place = ItineraryPlace.update(itinerary_params)
+      render json: @update_itinerary_place, status: :accepted
     end
 
     private

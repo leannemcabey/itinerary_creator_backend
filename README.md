@@ -1,24 +1,25 @@
-# README
+# Itinerary Creator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Itinerary Creator is a NYC itinerary generator, based on user price point.
 
-Things you may want to cover:
+This is the backend API for this project. The frontend repo can be found [here](https://github.com/leannemcabey/itinerary_creator_frontend).
 
-* Ruby version
+## Visuals
 
-* System dependencies
+[Video Demo](https://www.youtube.com/watch?v=RXFBBkyoxzs)
 
-* Configuration
+## Installation
 
-* Database creation
+```bash
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
+```
 
-* Database initialization
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

@@ -15,12 +15,10 @@ class Api::V1::UsersController < ApplicationController
       render json: @new_user, status: :accepted
     end
 
-    # We can maybe implement update and destroy if we have time after hitting MVP.
-
     private
 
       def user_params
         params.permit(:name)
-        # I know we normally have the nested structure with require and permit, but this is what worked for my mod3 project, so I'm trying it here. I'm not sure if using a non-rails front-end omits the nested structure?
       end
+      
 end

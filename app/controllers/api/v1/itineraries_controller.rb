@@ -1,13 +1,13 @@
 class Api::V1::ItinerariesController < ApplicationController
 
     def index
-        @itineraries = Itinerary.all
-        render json: @itineraries, status: :ok
+      @itineraries = Itinerary.all
+      render json: @itineraries, status: :ok
     end
 
     def show
-        @itinerary = Itinerary.find(params[:id])
-        render json: @itinerary, status: :ok
+      @itinerary = Itinerary.find(params[:id])
+      render json: @itinerary, status: :ok
     end
 
     def create
@@ -23,6 +23,7 @@ class Api::V1::ItinerariesController < ApplicationController
     private
 
       def itinerary_params
-        params.permit(:user_id, :budget, :title, :start, :end, :city, :state, places_attributes: [:id, :city, :state, :address, :name, :rating, :phone_number, :description, :website, :price_level])
+        params.permit(:user_id, :budget, :title, :date, :city, :state, places_attributes: [:id, :city, :state, :address, :name, :rating, :phone_number, :description, :website, :price_level])
       end
+
 end

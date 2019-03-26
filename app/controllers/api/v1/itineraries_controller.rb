@@ -23,7 +23,7 @@ class Api::V1::ItinerariesController < ApplicationController
     private
 
       def itinerary_params
-        params.permit(:user_id, :budget, :title, :date, :city, :state, places_attributes: [:id, :city, :state, :address, :name, :rating, :phone_number, :description, :website, :price_level])
+        params.permit(:user_id, :budget, :title, :notes, :date, :city, :state, places_attributes: [:id, :city, :state, :address, :name, :rating, :phone_number, :description, :website, :price_level])
       end
 
 end
